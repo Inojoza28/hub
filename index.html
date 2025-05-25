@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hub de soluções de cobrança da Pague Bem Brasil: reduza a inadimplência, recupere créditos e otimize seus recebimentos com nossa plataforma integrada.">
+    <meta name="keywords" content="gestão de cobranças, recuperação de crédito, redução de inadimplência, soluções de pagamento, cobrança digital, Pague Bem Brasil, plataforma de cobrança, ferramentas financeiras">
+    <title>Hub Pague Bem Brasil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="public/js/tailwindconfig.js"></script>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-neutral-50 min-h-screen">
+    <!-- Header com navegação -->
+<header class="sticky top-0 z-50 glass-effect border-b border-neutral-200/50 bg-white/80 backdrop-blur-sm shadow-sm">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo e Título - Sempre visível -->
+            <div class="flex items-center space-x-3 flex-shrink-0">
+                <div class="flex items-center justify-center w-10 h-10 bg-white rounded-xl shadow-soft overflow-hidden">
+                    <img src="public/imgs/icon-pague-bem-brasil.png" alt="Logo" class="w-full h-full object-cover" />
+                </div>
+                <div>
+                    <h1 class="text-lg md:text-xl font-bold text-neutral-900 leading-tight">Hub - Pague Bem Brasil</h1>
+                    <div class="flex items-center space-x-2">
+                        <div class="status-indicator animate-pulse"></div>
+                        <span class="text-xs text-neutral-500">Sistema Online</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="p-2 rounded-lg hover:bg-neutral-100 transition-colors relative w-10 h-10 flex items-center justify-center">
+                    <!-- Ícone Hamburger/X Animado -->
+                    <div class="w-6 h-6 relative">
+                        <!-- Linha Superior -->
+                        <span id="top-line" class="absolute h-0.5 w-6 bg-neutral-700 rounded-full transform transition-transform duration-300 ease-in-out origin-center left-0 top-0"></span>
+                        <!-- Linha do Meio -->
+                        <span id="middle-line" class="absolute h-0.5 w-6 bg-neutral-700 rounded-full transform transition-all duration-300 ease-in-out origin-center left-0 top-[10px]"></span>
+                        <!-- Linha Inferior -->
+                        <span id="bottom-line" class="absolute h-0.5 w-6 bg-neutral-700 rounded-full transform transition-transform duration-300 ease-in-out origin-center left-0 top-[20px]"></span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Navegação - Desktop -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://www.paguebembrasil.com.br" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center text-sm text-neutral-600 hover:text-primary-600 transition-colors px-3 py-2">
+                    Site Oficial
+                    <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                </a>
+                <a href="https://www.paguebembrasil.com.br/cadastrar" target="_blank" 
+                   class="bg-primary-600 hover:bg-primary-700 text-white font-medium px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all text-sm active:scale-95">
+                    Abrir sua conta
+                </a>
+            </div>
+        </div>
+
+        <!-- Menu Mobile - Conteúdo -->
+        <div id="mobile-menu" class="hidden md:hidden fixed w-full bg-white border-t border-neutral-100 left-0 shadow-lg transition-all duration-300 ease-in-out transform -translate-y-2 opacity-0">
+          <div class="px-4 py-3 space-y-3">
+            <a href="https://www.paguebembrasil.com.br" target="_blank" rel="noopener noreferrer" class="flex items-center text-neutral-700 hover:text-primary-600 px-3 py-2 rounded-lg bg-neutral-50 transition-colors space-x-2">
+             
+             <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+             </svg>
+            <span>Site Oficial</span>
+          </a>
+
+          <a href="https://www.paguebembrasil.com.br/cadastrar" target="_blank" class="block w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-medium px-5 py-2.5 rounded-lg shadow-md transition-colors">
+            Abrir sua conta
+            </a>
+        </div>
+      </div>
+    </nav>
+</header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <nav class="breadcrumb">
+            <span>Hub</span>
+            <span class="mx-2">•</span>
+            <span class="text-neutral-900 font-medium">Soluções de Cobrança</span>
+        </nav>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <!-- Hero Section Aprimorada -->
+        <div class="relative hero-gradient rounded-3xl shadow-hero mb-16 overflow-hidden">
+            <!-- Formas decorativas -->
+            <div class="blob-shape bg-primary-100 w-64 h-64 rounded-full top-0 right-0 -mr-20 -mt-20"></div>
+            <div class="blob-shape bg-accent-500/20 w-48 h-48 rounded-full bottom-0 left-1/4 -mb-20 animate-pulse-slow"></div>
+            
+            <!-- Conteúdo Principal da Hero -->
+            <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between px-6 py-10 md:px-8 md:py-12 lg:px-12 lg:py-16">
+                <!-- Conteúdo textual -->
+                <div class="text-center lg:text-left max-w-xl mb-8 lg:mb-0 animate-fade-in">
+                    <span class="inline-block px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-sm font-medium mb-4">
+                        Plataforma Completa
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 leading-tight">
+                        Transforme sua <span class="gradient-text">gestão de cobranças</span> com nossas soluções
+                    </h2>
+                    <p class="text-base sm:text-lg text-neutral-600 mb-8 leading-relaxed">
+                        Acesse todas as ferramentas da Pague Bem Brasil em um só lugar.
+                        Reduza a inadimplência e aumente sua recuperação de crédito com nossa plataforma integrada.
+                    </p>
+                    <div class="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4">
+                        <a href="#solucoes" class="cta-button bg-primary-600 hover:bg-primary-700 text-white font-medium px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center sm:justify-start">
+                            Explorar Soluções
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.paguebembrasil.com.br/cadastrar" target="_blank" class="bg-white hover:bg-neutral-100 text-neutral-800 font-medium px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-neutral-200 flex items-center justify-center sm:justify-start">
+                            Abra sua conta
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Ilustração/Gráfico -->
+                <div class="relative w-full lg:w-2/5 flex justify-center mt-10 lg:mt-0">
+                    <div class="relative animate-bounce-slow">
+                        <!-- Círculo decorativo -->
+                        <div class="absolute -z-10 w-64 h-64 rounded-full bg-primary-50 opacity-70"></div>
+                        
+                        <!-- Ícones flutuantes (escondidos em telas pequenas) -->
+                        <div class="hidden sm:block absolute -top-6 -left-6 bg-white p-3 rounded-xl shadow-lg animate-float" style="animation-delay: 0.5s">
+                            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="hidden sm:block absolute top-20 -right-8 bg-white p-3 rounded-xl shadow-lg animate-float" style="animation-delay: 1s">
+                            <svg class="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="hidden sm:block absolute -bottom-4 left-10 bg-white p-3 rounded-xl shadow-lg animate-float" style="animation-delay: 1.5s">
+                            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Imagem central -->
+                        <div class="bg-white p-4 rounded-2xl shadow-xl">
+                          <div class="w-56 h-56 flex items-center justify-center bg-primary-50 rounded-xl overflow-hidden">
+                            <img src="public/imgs/icon-pague-bem-brasil-remove.png" alt="Logo central" class="w-44 h-44 object-cover rounded-lg" />
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Estatísticas rápidas -->
+            <div class="relative z-10 bg-white/80 backdrop-blur-sm border-t border-neutral-100 px-6 py-6 sm:px-8">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-primary-50 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xl sm:text-2xl font-bold text-neutral-900">25x</p>
+                            <p class="text-xs sm:text-sm text-neutral-600">mais retorno sobre investimento</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-accent-500/10 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xl sm:text-2xl font-bold text-neutral-900">40%</p>
+                            <p class="text-xs sm:text-sm text-neutral-600">de cobranças resolvidas automaticamente</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-emerald-50 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xl sm:text-2xl font-bold text-neutral-900">60%</p>
+                            <p class="text-xs sm:text-sm text-neutral-600">de redução em custos de cobrança</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Forma de onda -->
+            <div class="wave-shape"></div>
+        </div>
+
+        <!-- Título da seção de soluções -->
+        <div class="flex items-center space-x-4 mb-8" id="solucoes">
+            <div class="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-neutral-900">Nossas Soluções</h2>
+        </div>
+
+        <!-- Grid de Serviços -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <!-- Card 1 - Pague Bem Recupera -->
+            <div class="service-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover group cursor-pointer animate-slide-up">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-xl group-hover:bg-blue-100 transition-colors">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-neutral-900">Pague Bem Recupera</h3>
+                            <p class="text-sm text-neutral-500">Créditos vencidos</p>
+                        </div>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-neutral-600 text-sm mb-4 leading-relaxed">
+                    Recupere créditos vencidos em até 5 anos com nossa ferramenta especializada e automatizada.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+                        Recuperação
+                    </span>
+                    <span class="text-xs text-neutral-500">Clique para acessar</span>
+                </div>
+            </div>
+
+            <!-- Card 2 - Pague Bem Protege -->
+            <div class="service-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover group cursor-pointer animate-slide-up" style="animation-delay: 0.1s">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center justify-center w-12 h-12 bg-primary-50 rounded-xl group-hover:bg-primary-100 transition-colors">
+                            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-neutral-900">Pague Bem Protege</h3>
+                            <p class="text-sm text-neutral-500">Análise de crédito</p>
+                        </div>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-neutral-600 text-sm mb-4 leading-relaxed">
+                    Rede colaborativa para pesquisa, publicação e análise completa de crédito empresarial.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-medium text-primary-600 bg-primary-50 px-2 py-1 rounded-full">
+                        Proteção
+                    </span>
+                    <span class="text-xs text-neutral-500">Clique para acessar</span>
+                </div>
+            </div>
+
+            <!-- Card 3 - Pague Bem Conta -->
+            <div class="service-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover group cursor-pointer animate-slide-up" style="animation-delay: 0.2s">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center justify-center w-12 h-12 bg-purple-50 rounded-xl group-hover:bg-purple-100 transition-colors">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-neutral-900">Pague Bem Conta</h3>
+                            <p class="text-sm text-neutral-500">Opções de pagamento</p>
+                        </div>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-neutral-600 text-sm mb-4 leading-relaxed">
+                    Múltiplas opções de pagamento disponíveis no momento do recebimento da cobrança.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-medium text-purple-600 bg-purple-50 px-2 py-1 rounded-full">
+                        Pagamentos
+                    </span>
+                    <span class="text-xs text-neutral-500">Clique para acessar</span>
+                </div>
+            </div>
+
+            <!-- Card 4 - Pague Bem Localize -->
+            <div class="service-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover group cursor-pointer animate-slide-up" style="animation-delay: 0.3s">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center justify-center w-12 h-12 bg-amber-50 rounded-xl group-hover:bg-amber-100 transition-colors">
+                            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-neutral-900">Pague Bem Localize</h3>
+                            <p class="text-sm text-neutral-500">Localização de contatos</p>
+                        </div>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-neutral-600 text-sm mb-4 leading-relaxed">
+                    Localização eficiente de e-mails e telefones para campanhas de cobrança otimizadas.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded-full">
+                        Localização
+                    </span>
+                    <span class="text-xs text-neutral-500">Clique para acessar</span>
+                </div>
+            </div>
+
+            <!-- Card 5 - Pague Bem Conversas -->
+            <div class="service-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover group cursor-pointer animate-slide-up" style="animation-delay: 0.4s">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center justify-center w-12 h-12 bg-emerald-50 rounded-xl group-hover:bg-emerald-100 transition-colors">
+                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-neutral-900">Pague Bem Conversas</h3>
+                            <p class="text-sm text-neutral-500">WhatsApp Business</p>
+                        </div>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-neutral-600 text-sm mb-4 leading-relaxed">
+                    Converte clientes inadimplentes em pagantes através de estratégias de conversação via WhatsApp.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">
+                        Comunicação
+                    </span>
+                    <span class="text-xs text-neutral-500">Clique para acessar</span>
+                </div>
+            </div>
+
+            <!-- Card 6 - Calculadora de ROI -->
+            <div class="service-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover group cursor-pointer animate-slide-up" style="animation-delay: 0.5s">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center justify-center w-12 h-12 bg-indigo-50 rounded-xl group-hover:bg-indigo-100 transition-colors">
+                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-neutral-900">Calculadora de ROI</h3>
+                            <p class="text-sm text-neutral-500">Retorno sobre investimento</p>
+                        </div>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-neutral-600 text-sm mb-4 leading-relaxed">
+                    Calcule quanto sua empresa pode economizar e recuperar com as soluções da Pague Bem Brasil.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full">
+                        Ferramenta
+                    </span>
+                    <span class="text-xs text-neutral-500">Clique para acessar</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Recursos -->
+        <div class="bg-white rounded-2xl shadow-soft p-8 mb-16">
+            <div class="flex items-center space-x-4 mb-8">
+                <div class="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-neutral-900">Recursos Exclusivos</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="feature-item p-4 rounded-xl hover:bg-neutral-50 transition-colors">
+                    <div class="feature-icon w-12 h-12 bg-primary-50 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-neutral-900 mb-2">Análise Avançada</h3>
+                    <p class="text-sm text-neutral-600">Dashboards e relatórios detalhados para acompanhar o desempenho das cobranças.</p>
+                </div>
+                
+                <div class="feature-item p-4 rounded-xl hover:bg-neutral-50 transition-colors">
+                    <div class="feature-icon w-12 h-12 bg-accent-500/10 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-neutral-900 mb-2">Alertas Inteligentes</h3>
+                    <p class="text-sm text-neutral-600">Notificações automáticas sobre pagamentos, vencimentos e oportunidades de negociação.</p>
+                </div>
+                
+                <div class="feature-item p-4 rounded-xl hover:bg-neutral-50 transition-colors">
+                    <div class="feature-icon w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-neutral-900 mb-2">Segurança Avançada</h3>
+                    <p class="text-sm text-neutral-600">Proteção de dados e conformidade com LGPD para todas as operações de cobrança.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chamada para Ação -->
+        <div class="bg-primary-600 rounded-2xl shadow-lg overflow-hidden mb-16">
+            <div class="relative px-8 py-12 md:p-12">
+                <!-- Formas decorativas -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary-500 rounded-full opacity-20 -mr-32 -mt-32"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full opacity-10 -ml-24 -mb-24"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-8 md:mb-0 md:mr-8">
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Pronto para transformar sua gestão de cobranças?</h2>
+                        <p class="text-primary-100 mb-0">Agende uma demonstração gratuita e descubra como a Pague Bem Brasil pode ajudar sua empresa.</p>
+                    </div>
+                    <a href="#" class="bg-white hover:bg-neutral-100 text-primary-700 font-medium px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all whitespace-nowrap">
+                        Agendar Demonstração
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-800 text-neutral-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="flex items-center justify-center w-10 h-10 bg-neutral-700 rounded-xl overflow-hidden">
+                        <img src="public/imgs/icon-pague-bem-brasil.png" alt="Logo" class="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Pague Bem Brasil</h3>
+                        <p class="text-xs text-neutral-500">Soluções de Cobrança Digital</p>
+                    </div>
+                </div>
+                
+              <div class="flex space-x-4">
+               <a href="https://www.instagram.com/paguebembrasil" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors">
+                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/paguebembrasil/" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors">
+                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+                 </svg>
+             </a>
+           </div>
+         </div>
+            <div class="border-t border-neutral-700 pt-8 pb-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-sm font-semibold text-white mb-4">Contato</h4>
+                        <p class="text-xs mb-2">contato@paguebembrasil.com.br</p>
+                        <p class="text-xs mb-2">+55 (81) 9 0000-0000</p>
+                        <p class="text-xs">Recife, PE - Brasil</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-semibold text-white mb-4">Links Rápidos</h4>
+                        <ul class="space-y-2">
+                            <li><a href="https://www.paguebembrasil.com.br/quem-somos" target="_blank" class="text-xs hover:text-white transition-colors">Quem somos</a></li>
+                            <li><a href="https://www.paguebembrasil.com.br/" target="_blank" class="text-xs hover:text-white transition-colors">Soluções</a></li>
+                            <li><a href="https://www.paguebembrasil.com.br/#pricing" target="_blank" class="text-xs hover:text-white transition-colors">Preços e planos</a></li>
+                            <li><a href="https://www.paguebembrasil.com.br/fale-com-consultor?p=2" target="_blank" class="text-xs hover:text-white transition-colors">Fale com um consultor</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-semibold text-white mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-xs hover:text-white transition-colors">Termos de Uso</a></li>
+                            <li><a href="#" class="text-xs hover:text-white transition-colors">Política de Privacidade</a></li>
+                            <li><a href="#" class="text-xs hover:text-white transition-colors">Política de Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center pt-4 text-xs">
+                <p>© 2025 Hub - Pague Bem Brasil. Todos os direitos reservados.</p>
+                <p class="mt-1">CNPJ: 21.052.746/0001-19</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5511XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.93 7.93 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.89 7.89 0 0 0 13.6 2.326zM7.994 14.521a6.57 6.57 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+    </a>
+
+    <script src="public/js/menu-mobile.js"></script>
+    <script src="public/js/script.js"></script>
+</body>
+</html>
