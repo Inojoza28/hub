@@ -3,11 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".service-card");
   cards.forEach((card) => {
     card.addEventListener("click", function () {
-      const title = this.querySelector("h3").textContent;
-      alert(`Isso redireciona para: ${title}`);
-      // Em uma implementação real, aqui você redirecionaria para a página específica
+      window.location.href = "https://www.paguebembrasil.com.br/entrar";
     });
   });
+
 
   // Scroll suave para âncoras
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
